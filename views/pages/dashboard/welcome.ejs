@@ -1,0 +1,33 @@
+<div id="welcome">
+  <div class="container">
+    <h1>Welcome!</h1>
+    <hr/>
+    <p>You're seeing this because you're logged in and recognized</p>
+    <hr/>
+    <p>What would you like to do?</p>
+    <div class="buttons">
+      <p><a class="btn btn-outline-info"href="/account/profile">Update your profile</a></p>
+      <!--<p><a class="btn btn-outline-info" href="/data/dental-info-summary">Dental Offices</a></p> -->
+     <!-- <p><button class="btn btn-outline-info mr-2" @click="clickOpenDashboardModalButton()">Modal Windows</button><p/>-->
+      <p><button class="btn btn-outline-info" @click="clickOpenDashboardModalButton()">Your Notifications</button></p>
+    </div>
+  </div>
+
+  <modal class="example-modal" v-if="dashboardModalVisible" @close="closeDashboardModal()" v-cloak>
+    <div class="modal-header">
+      <h2 class="modal-title">FYI</h2>
+      <p>This is where your personalized notifications will reside</p>
+      <hr/>
+      <button type="button" class="modal-close-button" data-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+      <h5 class="section-heading">For your information</h5>
+      <p>thoughts and musings</p>
+    </div>
+    <div class="modal-footer flex-row-reverse justify-content-between">
+      <button type="button" data-dismiss="modal" class="btn btn-info">Close</button>
+      <button type="button" data-dismiss="modal" class="btn btn-outline-info">Cancel</button>
+    </div>
+  </modal>
+</div>
+<%- /* Expose locals as `window.SAILS_LOCALS` :: */ exposeLocalsToBrowser() %>
